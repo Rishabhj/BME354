@@ -46,8 +46,18 @@ void temp_control(int setpoint)
       break; 
       }
     }
-    
-}  
+} 
+
+void message(int tempVal, int setpoint)
+{
+  lcd.setCursor(0,0); // set cursor to first column, first row
+  lcd.print("Current Temp:");
+  lcd.print(tempVal);
+  lcd.setCursor(0,1); // set cursor to first column, second row
+  lcd.print("Setpoint Temp:");
+  lcd.print(setpoint);
+}
+
 
 void setup() {
   Serial.begin(9600);
